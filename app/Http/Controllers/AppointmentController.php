@@ -10,15 +10,15 @@ use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
-    
-    public function fetch()
-{
-    $user_id = Auth::id(); // Retrieve the authenticated user's id
-    // Retrieve appointments based on patient_id
-    $appointments = Appointment::where('user_id', $user_id)->get();
 
-    return view('patient.report', compact('appointments'));
-}
+    public function fetch()
+    {
+        $user_id = Auth::id(); // Retrieve the authenticated user's id
+        // Retrieve appointments based on patient_id
+        $appointments = Appointment::where('user_id', $user_id)->get();
+
+        return view('patient.report', compact('appointments'));
+    }
 
 
     public function reportList()
@@ -54,15 +54,15 @@ class AppointmentController extends Controller
         $user = Auth::user(); // Get the authenticated user
         $patients = User::where('role', 0)->get('name'); // Fetch all patients (assuming role 0 is for patients)
         $hospitals = User::where('role', 2)->get(); // Fetch hospitals (assuming role 2 is for hospitals)
-        $vaccines = Vaccine::select('vaccine_name')->get();
-    
+        $vaccines = Vaccine::where('vaccine_availability', 'yes')->select('vaccine_name')->get();
+
         if ($patients->isEmpty()) {
             return redirect('home')->with('error', 'No patients found.');
         }
-    
+
         return view('patient.appointment', compact('hospitals', 'user', 'vaccines'));
     }
-        public function store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'username' => 'required|string|max:255',
