@@ -14,10 +14,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="vaccine_availability" class="form-label">Vaccine Availability</label>
-                        <select class="form-control" id="vaccine_availability" name="vaccine_availability" required>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
+                        <input type="text" class="form-control" id="vaccine_availability" name="vaccine_availability"
+                            required>
                     </div>
                     <button type="submit" class="btn btn-primary">Add Vaccine</button>
                 </form>

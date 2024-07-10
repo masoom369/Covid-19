@@ -12,7 +12,7 @@
         </div>
     @endif
     @if(session('destroy'))
-    <div class="alert alert-danger alert-dismissible fade show mt-3 mb-3" role="alert">
+    <div class="alert alert-destroy alert-dismissible fade show mt-3 mb-3" role="alert">
         {{ session('destroy') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
