@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Covid-19</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -40,32 +40,32 @@
                                 <ul class="main_nav_ul">
 
                                     <li class="has-mega gc_main_navigation"><a href="{{ url('/') }}"
-                                            class=" hover_color">Home</a>
+                                            class=" hover_color gc_main_navigation">Home</a>
                                     </li>
                                     <li class="has-mega gc_main_navigation"><a href="{{ url('/corona') }}"
-                                            class=" hover_color">Corona</a>
+                                            class=" hover_color gc_main_navigation">Corona</a>
                                     </li>
                                     <li class="has-mega gc_main_navigation"><a href="{{ url('/symptoms') }}"
-                                            class=" hover_color">Symptoms</a>
+                                            class=" hover_color gc_main_navigation">Symptoms</a>
 
                                     </li>
                                     <li class="has-mega gc_main_navigation"><a href="{{ url('/prevention') }}"
-                                            class=" hover_color">Prevention</a>
+                                            class=" hover_color gc_main_navigation">Prevention</a>
                                     </li>
                                     <li class="has-mega gc_main_navigation"><a href="{{ url('patient/appointment') }}"
-                                            class=" hover_color">Book Appointment</a>
+                                            class=" hover_color gc_main_navigation">Book Appointment</a>
                                     </li>
                                     <li class="has-mega gc_main_navigation"><a href="{{ url('patient/report') }}"
-                                            class=" hover_color">Result</a>
+                                            class=" hover_color gc_main_navigation">Result</a>
                                     </li>
                                     @if (Route::has('login'))
                                         @auth
-                                            <li><a href="{{ url('/home') }}">Dashboard</a></li>
+                                            <li><a href="{{ url('/home') }}" class="gc_main_navigation">Dashboard</a></li>
                                         @else
-                                            <li> <a href="{{ route('login') }}">Login</a></li>
+                                            <li> <a href="{{ route('login') }}" class="gc_main_navigation">Login</a></li>
 
                                             @if (Route::has('register'))
-                                                <li> <a href="{{ route('register') }}">Register</a></li>
+                                                <li> <a href="{{ route('register') }}" class="gc_main_navigation">Register</a></li>
                                             @endif
                                         @endauth
                                     @endif
